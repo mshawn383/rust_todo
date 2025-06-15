@@ -1,0 +1,12 @@
+/home/michael/Desktop/Leptos/leptos_tuts/target/debug/deps/libtinystr-3fdc9e21893b6e22.rmeta: /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/lib.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/macros.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/ascii.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/asciibyte.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/error.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/int_ops.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/unvalidated.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/ule.rs
+
+/home/michael/Desktop/Leptos/leptos_tuts/target/debug/deps/tinystr-3fdc9e21893b6e22.d: /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/lib.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/macros.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/ascii.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/asciibyte.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/error.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/int_ops.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/unvalidated.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/ule.rs
+
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/lib.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/macros.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/ascii.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/asciibyte.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/error.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/int_ops.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/unvalidated.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tinystr-0.8.1/src/ule.rs:

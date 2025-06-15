@@ -1,0 +1,11 @@
+/home/michael/Desktop/Leptos/leptos_tuts/target/wasm32-unknown-unknown/debug/deps/libtoml_write-fff2ea50abb8216c.rmeta: /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/lib.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/key.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/string.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/value.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/write.rs
+
+/home/michael/Desktop/Leptos/leptos_tuts/target/wasm32-unknown-unknown/debug/deps/libtoml_write-fff2ea50abb8216c.rlib: /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/lib.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/key.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/string.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/value.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/write.rs
+
+/home/michael/Desktop/Leptos/leptos_tuts/target/wasm32-unknown-unknown/debug/deps/toml_write-fff2ea50abb8216c.d: /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/lib.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/key.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/string.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/value.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/write.rs
+
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/lib.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/key.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/string.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/value.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/toml_write-0.1.2/src/write.rs:

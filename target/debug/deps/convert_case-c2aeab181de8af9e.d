@@ -1,0 +1,11 @@
+/home/michael/Desktop/Leptos/leptos_tuts/target/debug/deps/libconvert_case-c2aeab181de8af9e.rmeta: /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/lib.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/boundary.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/case.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/converter.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/pattern.rs
+
+/home/michael/Desktop/Leptos/leptos_tuts/target/debug/deps/libconvert_case-c2aeab181de8af9e.rlib: /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/lib.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/boundary.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/case.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/converter.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/pattern.rs
+
+/home/michael/Desktop/Leptos/leptos_tuts/target/debug/deps/convert_case-c2aeab181de8af9e.d: /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/lib.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/boundary.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/case.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/converter.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/pattern.rs
+
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/lib.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/boundary.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/case.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/converter.rs:
+/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/convert_case-0.8.0/src/pattern.rs:
