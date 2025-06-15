@@ -1,8 +1,0 @@
-/home/michael/Desktop/Leptos/leptos_tuts/target/debug/deps/libproc_macro2_diagnostics-c313f808361cb491.rmeta: /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro2-diagnostics-0.10.1/src/lib.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro2-diagnostics-0.10.1/src/ext.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro2-diagnostics-0.10.1/src/diagnostic.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro2-diagnostics-0.10.1/src/line.rs
-
-/home/michael/Desktop/Leptos/leptos_tuts/target/debug/deps/proc_macro2_diagnostics-c313f808361cb491.d: /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro2-diagnostics-0.10.1/src/lib.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro2-diagnostics-0.10.1/src/ext.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro2-diagnostics-0.10.1/src/diagnostic.rs /home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro2-diagnostics-0.10.1/src/line.rs
-
-/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro2-diagnostics-0.10.1/src/lib.rs:
-/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro2-diagnostics-0.10.1/src/ext.rs:
-/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro2-diagnostics-0.10.1/src/diagnostic.rs:
-/home/michael/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro2-diagnostics-0.10.1/src/line.rs:
