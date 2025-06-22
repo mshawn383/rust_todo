@@ -23,7 +23,7 @@ pub fn TodoApp()-> impl IntoView{
     let (open_categories, set_open_categories) = signal(HashSet::<String>::new());
     let (todo_list, set_todo_list) = signal(TodoList {
         category: HashMap::from([
-            ("work".to_string(), vec![
+            ("Work".to_string(), vec![
                 Todo { id: 1, title: "Complete project report".to_string() },
                 Todo { id: 2, title: "Attend team meeting".to_string() },
             ]),
@@ -43,13 +43,14 @@ pub fn TodoApp()-> impl IntoView{
        <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer">
    + Add Todo
 </button>
- <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer" on:click =move |_| set_is_category_modal.update(|val| *val=!*val) >
+ <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer " on:click =move |_| set_is_category_modal.update(|val| *val=!*val) >
    + Add Category
 </button>
         </div>
 
 
-
+<br/>
+<br/>
     <For
       each=move ||{let list = todo_list.get();
                 todo_list.get().category.keys().cloned().collect::<Vec<_>>()
@@ -60,7 +61,7 @@ pub fn TodoApp()-> impl IntoView{
         let todos = list.category.get(&category).cloned().unwrap_or_default();
           view! {
               <div class="mb-4">
-                  <h2 class="text-xl font-semibold mb-2"  on:click=move |_| {
+                  <h2 class=" font-semibold flex items-center justify-center relative box-border bg-transparent cursor-pointer select-none align-middle appearance-none text-inherit w-full font-inter text-lg shadow-lg p-4 bg-white rounded"  on:click=move |_| {
                     set_open_categories.update(|set| {
                         if set.contains(&category) {
                             set.remove(&category);
@@ -72,6 +73,7 @@ pub fn TodoApp()-> impl IntoView{
                 // <Show when=move || open_categories.get().contains(&category)
                 // fallback=|| ()
                 // >
+                <div class="border-[2px] border-[cornflowerblue] p-[22px] rounded-[5px]">
                       <For
                           each=move || todos.clone()
                           key=|todo| todo.id
@@ -81,6 +83,7 @@ pub fn TodoApp()-> impl IntoView{
                               }
                           }
                       />
+                      </div>
 
                 // </Show>
               </div>
