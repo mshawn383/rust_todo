@@ -6,6 +6,9 @@ use leptos::prelude::For;
 use leptos::prelude::ElementChild;
 use leptos::prelude::signal;
 use crate::components::modal::Modal;
+use web_sys::console;
+use leptos::prelude::Set;
+
 
 
 #[derive(Clone)]
@@ -59,21 +62,44 @@ pub fn TodoApp()-> impl IntoView{
       children=move |category| {
            let list = todo_list.get();
         let todos = list.category.get(&category).cloned().unwrap_or_default();
+        let category_name=category.clone();
           view! {
               <div class="mb-4">
-                  <h2 class=" font-semibold flex items-center justify-center relative box-border bg-transparent cursor-pointer select-none align-middle appearance-none text-inherit w-full font-inter text-lg shadow-lg p-4 bg-white rounded"  on:click=move |_| {
-                    set_open_categories.update(|set| {
-                        if set.contains(&category) {
-                            set.remove(&category);
+                  <h2 class=" font-semibold flex items-center justify-center relative box-border bg-transparent cursor-pointer select-none align-middle appearance-none text-inherit w-full font-inter text-lg shadow-lg p-4 bg-white rounded"  
+                  on:click=move |_| {
+                    let category = category.clone();
+                    console::log_1(&format!("Clicked! {}",category).into());
+
+                    set_open_categories.set({
+                        let mut new_set = open_categories.get().clone();
+                        if new_set.contains(&category) {
+                            new_set.remove(&category);
                         } else {
-                            set.insert(category.clone());
+                            new_set.insert(category.clone());
                         }
+                        new_set
                     });
+                    console::log_1(&format!("Open categories: {:?}", open_categories.get()).into());
+                    // set_open_categories.update(|set| {
+                    //     if set.contains(&category) {
+                    //         console::log_1(&"update!".into());
+                    //         set.remove(&category);
+                        
+                    //     } else {
+                    //         set.insert(category.clone());
+                    //     }
+                    // });
                 }>{category.clone()}</h2>
-                // <Show when=move || open_categories.get().contains(&category)
-                // fallback=|| ()
-                // >
-                <div class="border-[2px] border-[cornflowerblue] p-[22px] rounded-[5px]">
+            
+                <div class=move || {
+                    let base = "border-[2px] border-[#ecedee] p-[22px] rounded-[5px]";
+                    if open_categories.get().contains(&category_name) {
+                        format!("{base} block")
+                    } else {
+                        format!("{base} hidden")
+                    }
+                }
+            >
                       <For
                           each=move || todos.clone()
                           key=|todo| todo.id
@@ -85,7 +111,7 @@ pub fn TodoApp()-> impl IntoView{
                       />
                       </div>
 
-                // </Show>
+      
               </div>
           }
             }
@@ -93,6 +119,9 @@ pub fn TodoApp()-> impl IntoView{
         <Show when=move || is_category_modal.get()>
         <Modal show=is_category_modal/>
         </Show>
+        
+ 
+        
 
     }
 }

@@ -2182,6 +2182,7 @@ version = "0.1.0"
 dependencies = [
  "leptos",
  "trunk",
+ "web-sys",
 ]
 
 [[package]]

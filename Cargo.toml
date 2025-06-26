@@ -6,3 +6,4 @@ edition = "2021"
 [dependencies]
 leptos = { version = "0.8.2", features = ["csr"] }
 trunk = "0.21.14"
+web-sys = "0.3.77"
