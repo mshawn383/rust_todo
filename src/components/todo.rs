@@ -6,6 +6,7 @@ use leptos::prelude::For;
 use leptos::prelude::ElementChild;
 use leptos::prelude::signal;
 use crate::components::modal::Modal;
+use crate::components::optionmodal::OptionsModal;
 use web_sys::console;
 use leptos::prelude::Set;
 use crate::components::models::{TodoList,Todo};
@@ -15,6 +16,7 @@ use crate::components::models::{TodoList,Todo};
 #[component]
 pub fn TodoApp()-> impl IntoView{
     let (is_category_modal,set_is_category_modal)=signal(false);
+    let (is_todo_modal,set_is_todo_modal)=signal(false);
     let (open_categories, set_open_categories) = signal(HashSet::<String>::new());
     let (todo_list, set_todo_list) = signal(TodoList {
         category: HashMap::from([
@@ -33,9 +35,11 @@ pub fn TodoApp()-> impl IntoView{
         ])
     });
     view!{
-        <p class="text-lg font-medium flex items-center justify-center">Todo App</p>
+        <p class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center">
+  Todo App
+</p>
         <div>
-       <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer">
+       <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer" on:click=move |_|set_is_todo_modal.update(|val| *val= !*val)>
    + Add Todo
 </button>
  <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow cursor-pointer " on:click =move |_| set_is_category_modal.update(|val| *val=!*val) >
@@ -55,9 +59,11 @@ pub fn TodoApp()-> impl IntoView{
            let list = todo_list.get();
         let todos = list.category.get(&category).cloned().unwrap_or_default();
         let category_name=category.clone();
+        let category_for_delete = category.clone();
+
           view! {
               <div class="mb-4">
-                  <h2 class=" font-semibold flex items-center justify-center relative box-border bg-transparent cursor-pointer select-none align-middle appearance-none text-inherit w-full font-inter text-lg shadow-lg p-4 bg-white rounded"  
+                  <div class="flex items-center justify-between p-4 bg-white rounded shadow-lg"  
                   on:click=move |_| {
                     let category = category.clone();
                     set_open_categories.set({
@@ -70,7 +76,18 @@ pub fn TodoApp()-> impl IntoView{
                         new_set
                     });
     
-                }>{category.clone()}</h2>
+                }><h2 class="text-lg font-semibold mx-auto cursor-pointer">{category.clone()}</h2>    <button
+                class="ml-2 text-red-500 hover:text-red-700"
+                on:click=move |_| {
+                  set_todo_list.update(|list| {
+                    list.category.remove(&category_for_delete);
+                  });
+            
+                }
+              >
+              Delete
+              </button></div>
+             
             
                 <div class=move || {
                     let base = "border-[2px] border-[#ecedee] p-[22px] rounded-[5px]";
@@ -103,7 +120,12 @@ pub fn TodoApp()-> impl IntoView{
         set_todo_list=set_todo_list
         />
         
- 
+ <OptionsModal
+ show=is_todo_modal
+ set_is_todo_modal=set_is_todo_modal
+ todo_list=todo_list
+ set_todo_list=set_todo_list
+ />
         
 
     }
