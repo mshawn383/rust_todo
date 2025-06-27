@@ -8,6 +8,7 @@ use leptos::prelude::signal;
 use crate::components::modal::Modal;
 use crate::components::optionmodal::OptionsModal;
 use web_sys::console;
+use leptos::prelude::RwSignal;
 use leptos::prelude::Set;
 use crate::components::models::{TodoList,Todo};
 
@@ -20,18 +21,18 @@ pub fn TodoApp()-> impl IntoView{
     let (open_categories, set_open_categories) = signal(HashSet::<String>::new());
     let (todo_list, set_todo_list) = signal(TodoList {
         category: HashMap::from([
-            ("Work".to_string(), vec![
+            ("Work".to_string(), RwSignal::new(vec![
                 Todo { id: 1, title: "Complete project report".to_string() },
                 Todo { id: 2, title: "Attend team meeting".to_string() },
-            ]),
-            ("Personal".to_string(), vec![
+            ])),
+            ("Personal".to_string(),RwSignal::new(vec![
                 Todo { id: 3, title: "Buy groceries".to_string() },
                 Todo { id: 4, title: "Call mom".to_string() },
-            ]),
-            ("Hobby".to_string(), vec![
+            ])),
+            ("Hobby".to_string(), RwSignal::new(vec![
                 Todo { id: 5, title: "Read a book".to_string() },
                 Todo { id: 6, title: "Practice guitar".to_string() },
-            ]),
+            ])),
         ])
     });
     view!{
@@ -57,7 +58,7 @@ pub fn TodoApp()-> impl IntoView{
       key=|category| category.clone()
       children=move |category| {
            let list = todo_list.get();
-        let todos = list.category.get(&category).cloned().unwrap_or_default();
+        let todos = list.category.get(&category).map(|s| s.get()).unwrap_or_default();
         let category_name=category.clone();
         let category_for_delete = category.clone();
 
@@ -102,6 +103,7 @@ pub fn TodoApp()-> impl IntoView{
                           each=move || todos.clone()
                           key=|todo| todo.id
                           children=move |todo| {
+                           
                               view! {
                                   <h2>{todo.title}</h2>
                               }
@@ -126,6 +128,8 @@ pub fn TodoApp()-> impl IntoView{
  todo_list=todo_list
  set_todo_list=set_todo_list
  />
+        
+
         
 
     }

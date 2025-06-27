@@ -1,10 +1,11 @@
 use std::collections::{HashMap};
+use leptos::prelude::RwSignal;
 
-#[derive(Clone)]
+#[derive(Clone,Debug)]
 pub struct TodoList {
-  pub category:HashMap::<String, Vec<Todo>>,
+  pub category:HashMap::<String, RwSignal<Vec<Todo>>>,
 }
-#[derive(Clone)]
+#[derive(Clone,Debug)]
 pub struct Todo {
     pub id: u32,
    pub  title: String

@@ -6,6 +6,7 @@ use std::collections::{HashMap};
 use crate::components::models::{TodoList,Todo};
 use leptos::prelude::OnTargetAttribute;
 use leptos::prelude::signal;
+use leptos::prelude::RwSignal;
 use leptos::prelude::Update;
 
 
@@ -54,7 +55,7 @@ pub fn Modal(
             <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700" on:click=move |_| {
               set_todo_list.update(|todo_list| {
                 let key = category.get();
-                todo_list.category.entry(key).or_insert_with(Vec::new);
+                todo_list.category.entry(key).or_insert_with(|| RwSignal::new(Vec::new()));
             });
             set_is_category_modal.set(false)
             }>

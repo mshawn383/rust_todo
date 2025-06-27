@@ -9,10 +9,4 @@ trunk = "0.21.14"
 web-sys = "0.3.77"
 
 
-[dependencies.uuid]
-version = "1.17.0"
-
-features = [
-    "v4",
-]
 

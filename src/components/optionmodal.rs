@@ -11,7 +11,9 @@ use leptos::prelude::Set;
 use leptos::prelude::WriteSignal;
 use leptos::prelude::OnTargetAttribute;
 use leptos::*;
+use leptos::prelude::Effect;
 use leptos::prelude::Update;
+use leptos::prelude::RwSignal;
 use web_sys::console;
 
 #[component]
@@ -23,6 +25,11 @@ pub fn OptionsModal(
 ) -> impl IntoView {
     let (select_value,set_select_value)=signal::<String>("".to_string());
     let (todo,set_todo)=signal::<String>("".to_string());
+    Effect::new(move |_| {
+        let current = todo_list.get();
+        console_log(&format!("UI re-rendered: {:?}", current));
+    });
+    
     view! {
             <div class=move || {
                 let base = "fixed inset-0 flex items-center justify-center bg-black bg-opacity-50";
@@ -77,20 +84,19 @@ pub fn OptionsModal(
                             Close
                         </button>
                         <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700" on:click=move |_|{
-                            set_todo_list.update(|todo_list| {
-                                let category = select_value.get();
-                                let todo_value=todo.get().clone();
-                                todo_list
-                                    .category
-                                    .entry(category)
-                                    .or_insert_with(Vec::new)
-                                    .push(Todo{id:1,title:todo_value});
-                            });
+                            let category = select_value.get();
+                            let todo_value = todo.get();
                             
-
-
-                            console_log(&select_value.get());
-                            console_log(&todo.get());
+                            set_todo_list.update(|list| {
+                                let category_signal = list
+                                    .category
+                                    .entry(category.clone())
+                                    .or_insert_with(|| RwSignal::new(Vec::new()));
+                                let id = category_signal.get().len() as u32 + 1;
+                                category_signal.update(|todos| {
+                                    todos.push(Todo { id, title: todo_value });
+                                });
+                            });
                         }>
                             Add
                         </button>
