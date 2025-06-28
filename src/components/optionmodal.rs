@@ -97,6 +97,8 @@ pub fn OptionsModal(
                                     todos.push(Todo { id, title: todo_value });
                                 });
                             });
+                  set_is_todo_modal.set(false)
+                   
                         }>
                             Add
                         </button>

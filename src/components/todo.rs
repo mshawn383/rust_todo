@@ -26,12 +26,12 @@ pub fn TodoApp()-> impl IntoView{
                 Todo { id: 2, title: "Attend team meeting".to_string() },
             ])),
             ("Personal".to_string(),RwSignal::new(vec![
-                Todo { id: 3, title: "Buy groceries".to_string() },
-                Todo { id: 4, title: "Call mom".to_string() },
+                Todo { id: 1, title: "Buy groceries".to_string() },
+                Todo { id: 2, title: "Call mom".to_string() },
             ])),
             ("Hobby".to_string(), RwSignal::new(vec![
-                Todo { id: 5, title: "Read a book".to_string() },
-                Todo { id: 6, title: "Practice guitar".to_string() },
+                Todo { id: 1, title: "Read a book".to_string() },
+                Todo { id: 2, title: "Practice guitar".to_string() },
             ])),
         ])
     });
@@ -61,6 +61,7 @@ pub fn TodoApp()-> impl IntoView{
         let todos = list.category.get(&category).map(|s| s.get()).unwrap_or_default();
         let category_name=category.clone();
         let category_for_delete = category.clone();
+        let selected_category=category.clone();
 
           view! {
               <div class="mb-4">
@@ -99,16 +100,22 @@ pub fn TodoApp()-> impl IntoView{
                     }
                 }
             >
-                      <For
-                          each=move || todos.clone()
-                          key=|todo| todo.id
-                          children=move |todo| {
-                           
-                              view! {
-                                  <h2>{todo.title}</h2>
-                              }
-                          }
-                      />
+            <For
+            each=move || {
+                todo_list
+                    .get()
+                    .category
+                    .get(&selected_category)
+                    .map(|signal| signal.get())
+                    .unwrap_or_default()
+            }
+            key=|todo| todo.id
+            children=move |todo| {
+                view! {
+                    <li class="list-decimal list-inside p-2">{todo.title.clone()}</li>
+                }
+            }
+        />
                       </div>
 
       

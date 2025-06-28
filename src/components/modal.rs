@@ -1,5 +1,5 @@
 use leptos::*;
-use leptos::prelude::{ClassAttribute, Get, OnAttribute, ReadSignal, Set};
+use leptos::prelude::{ClassAttribute, Effect, Get, OnAttribute, ReadSignal, Set};
 use leptos::prelude::ElementChild;
 use leptos::prelude::WriteSignal;
 use std::collections::{HashMap};
@@ -17,6 +17,7 @@ pub fn Modal(
     set_todo_list:WriteSignal<TodoList>
 ) -> impl IntoView {
   let (category,set_category)=signal::<String>("".to_string());
+  
     view! {
    
       <div class=move || {
