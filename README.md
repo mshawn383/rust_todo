@@ -9,7 +9,7 @@ A reactive, client-side Todo application built with [Leptos](https://leptos.dev/
 - ❌ Delete entire categories
 - 🔁 Reactive UI updates using `Signal` and `RwSignal`
 - ⚡ Built with client-side rendering (CSR) using Leptos
-- 🎨 Styled with Tailwind CSS (optional, if used)
+- 🎨 Styled with Tailwind CSS 
 
 ## 🛠️ Tech Stack
 
