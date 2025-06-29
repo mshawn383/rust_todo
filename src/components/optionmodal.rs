@@ -2,18 +2,18 @@ use crate::components::models::{Todo, TodoList};
 use leptos::leptos_dom::logging::console_log;
 use leptos::prelude::signal;
 use leptos::prelude::ClassAttribute;
+use leptos::prelude::Effect;
 use leptos::prelude::ElementChild;
 use leptos::prelude::For;
 use leptos::prelude::Get;
 use leptos::prelude::OnAttribute;
-use leptos::prelude::ReadSignal;
-use leptos::prelude::Set;
-use leptos::prelude::WriteSignal;
 use leptos::prelude::OnTargetAttribute;
-use leptos::*;
-use leptos::prelude::Effect;
-use leptos::prelude::Update;
+use leptos::prelude::ReadSignal;
 use leptos::prelude::RwSignal;
+use leptos::prelude::Set;
+use leptos::prelude::Update;
+use leptos::prelude::WriteSignal;
+use leptos::*;
 use web_sys::console;
 
 #[component]
@@ -21,15 +21,15 @@ pub fn OptionsModal(
     show: ReadSignal<bool>,
     set_is_todo_modal: WriteSignal<bool>,
     todo_list: ReadSignal<TodoList>,
-    set_todo_list:WriteSignal<TodoList>
+    set_todo_list: WriteSignal<TodoList>,
 ) -> impl IntoView {
-    let (select_value,set_select_value)=signal::<String>("".to_string());
-    let (todo,set_todo)=signal::<String>("".to_string());
+    let (select_value, set_select_value) = signal::<String>("".to_string());
+    let (todo, set_todo) = signal::<String>("".to_string());
     Effect::new(move |_| {
         let current = todo_list.get();
         console_log(&format!("UI re-rendered: {:?}", current));
     });
-    
+
     view! {
             <div class=move || {
                 let base = "fixed inset-0 flex items-center justify-center bg-black bg-opacity-50";
@@ -67,17 +67,17 @@ pub fn OptionsModal(
                     />
 
                     </select>
-                    <input 
-                    type="text" 
-                    placeholder="Add Todo" 
+                    <input
+                    type="text"
+                    placeholder="Add Todo"
                     class="w-full border border-gray-300 rounded px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     on:input:target=move |ev|{
                         if ev.target().value() !=""{
                             set_todo.set(ev.target().value())
                         }
-                       
+
                     }
-                  
+
                   />
                     <div class="flex justify-end space-x-2">
                         <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300" on:click=move |_| set_is_todo_modal.set(false)>
@@ -86,7 +86,7 @@ pub fn OptionsModal(
                         <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700" on:click=move |_|{
                             let category = select_value.get();
                             let todo_value = todo.get();
-                            
+
                             set_todo_list.update(|list| {
                                 let category_signal = list
                                     .category
@@ -98,7 +98,7 @@ pub fn OptionsModal(
                                 });
                             });
                   set_is_todo_modal.set(false)
-                   
+
                         }>
                             Add
                         </button>

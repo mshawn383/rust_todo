@@ -1,25 +1,24 @@
-use leptos::*;
-use leptos::prelude::{ClassAttribute, Effect, Get, OnAttribute, ReadSignal, Set};
-use leptos::prelude::ElementChild;
-use leptos::prelude::WriteSignal;
-use std::collections::{HashMap};
-use crate::components::models::{TodoList,Todo};
-use leptos::prelude::OnTargetAttribute;
+use crate::components::models::{Todo, TodoList};
 use leptos::prelude::signal;
+use leptos::prelude::ElementChild;
+use leptos::prelude::OnTargetAttribute;
 use leptos::prelude::RwSignal;
 use leptos::prelude::Update;
-
+use leptos::prelude::WriteSignal;
+use leptos::prelude::{ClassAttribute, Effect, Get, OnAttribute, ReadSignal, Set};
+use leptos::*;
+use std::collections::HashMap;
 
 #[component]
 pub fn Modal(
     show: ReadSignal<bool>,
-    set_is_category_modal:WriteSignal<bool>,
-    set_todo_list:WriteSignal<TodoList>
+    set_is_category_modal: WriteSignal<bool>,
+    set_todo_list: WriteSignal<TodoList>,
 ) -> impl IntoView {
-  let (category,set_category)=signal::<String>("".to_string());
-  
+    let (category, set_category) = signal::<String>("".to_string());
+
     view! {
-   
+
       <div class=move || {
         let base = "fixed inset-0 flex items-center justify-center bg-black bg-opacity-50";
         if show.get() {
@@ -29,26 +28,26 @@ pub fn Modal(
         }
       } >
         <div class="bg-white w-full max-w-md rounded-lg shadow-lg p-6">
-          
+
           <div class="flex justify-between items-center border-b pb-2 mb-4">
             <h2 class="text-xl font-semibold">Add Category</h2>
-    
+
             // <span class="cursor-pointer text-gray-600 hover:text-gray-900 font-bold">&times;</span>
           </div>
-      
-        
-          <input 
-            type="text" 
-            placeholder="Add Category Here" 
+
+
+          <input
+            type="text"
+            placeholder="Add Category Here"
             class="w-full border border-gray-300 rounded px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
             on:input:target=move |ev| {
               set_category.set(ev.target().value())
-           
+
           }
-          
+
           />
-      
-        
+
+
           <div class="flex justify-end space-x-2">
             <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300" on:click=move |_| set_is_category_modal.set(false)>
               Close
@@ -63,10 +62,10 @@ pub fn Modal(
               Add
             </button>
           </div>
-          
+
         </div>
       </div>
-        
- 
+
+
     }
 }

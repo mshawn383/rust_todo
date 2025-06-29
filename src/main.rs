@@ -1,12 +1,12 @@
 use leptos::mount::mount_to_body;
 use leptos::prelude::*;
-mod components; 
-use components::TodoApp; 
+mod components;
+use components::TodoApp;
 
 #[component]
 fn App() -> impl IntoView {
     view! {
-    
+
         <TodoApp/>
     }
 }
