@@ -6,7 +6,7 @@ A reactive, client-side Todo application built with [Leptos](https://leptos.dev/
 
 - ➕ Add and delete categories
 - 📝 Add todos under specific categories
-- ❌ Delete individual todos or entire categories
+- ❌ Delete entire categories
 - 🔁 Reactive UI updates using `Signal` and `RwSignal`
 - ⚡ Built with client-side rendering (CSR) using Leptos
 - 🎨 Styled with Tailwind CSS (optional, if used)
